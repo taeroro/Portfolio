@@ -1,0 +1,70 @@
+#section1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  height: 100vh;
+  color: #fff;
+  background-image: url(../assets/chris-holgersson-249309.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 20%;
+}
+
+/* ui-scrollfix condition fires */
+.topBar.ui-scrollfix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logoImg {
+  padding-left: 50px;
+  padding-top: 50px;
+  height: 100px;
+  filter: brightness(0) invert(1);
+}
+
+.menuButton {
+  float: right;
+  padding-right: 50px;
+  padding-top: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #454545;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 3px;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+#section2 {
+  padding-left: 50px;
+  padding-top: 50px;
+  height: 100vh;
+  color: #000;
+  background-color: #fff;
+}
+
+#section3 {
+  padding-left: 50px;
+  padding-top: 50px;
+  height: 100vh;
+  color: #fff;
+  background-color: #ff9800;
+}
