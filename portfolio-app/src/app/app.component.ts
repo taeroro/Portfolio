@@ -28,4 +28,10 @@ export class AppComponent {
       if (logo.className == "logoImg changeFilter") logo.className = "logoImg";
     }
   };
+
+  // menu animation
+  menuFunction() {
+    document.querySelector(".menuClosed").classList.toggle("menuPanel");
+    document.querySelector(".menuButton").classList.toggle("change");
+  }
 }

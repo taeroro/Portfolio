@@ -1,15 +1,20 @@
 <div class="topBar">
   <img class = "logoImg" [src]="logoPath">
 
-  <div class="menuButton" onclick="menuFunction(this)">
+  <!-- <div class="menuButton" onclick="menuFunction(this)"> -->
+  <div class="menuButton" (click)="menuFunction()">
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
-    <div class="clickEffect"></div>
   </div>
 </div>
 
-<div class="menuClosed"></div>
+<div class="menuClosed">
+  <h1>SECTION</h1>
+  <a href="#section1" class="button">Home</a>
+  <a href="#section2" class="button">Projects & Designs</a>
+  <a href="#section3" class="button">Contact</a>
+</div>
 
 <div id="section1" class="container-fluid">
   <div class="row">
