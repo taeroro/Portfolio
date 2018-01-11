@@ -1,5 +1,8 @@
 <div class="topBar">
-  <img class = "logoImg" [src]="logoPath">
+  <img class = "logoImg"
+    [src]="logoPath"
+    [ngx-scroll-to]="'#section1'"
+    [ngx-scroll-to-duration]="400">
 
   <!-- <div class="menuButton" onclick="menuFunction(this)"> -->
   <div class="menuButton" (click)="menuFunction()">
@@ -11,16 +14,25 @@
 
 <div class="menuClosed">
   <h1>SECTION</h1>
-  <a href="#section1" class="button">Home</a>
-  <a href="#section2" class="button">Projects & Designs</a>
-  <a href="#section3" class="button">Contact</a>
+  <button class="singleButton"
+    [ngx-scroll-to]="'#section1'"
+    [ngx-scroll-to-duration]="400">Home
+  </button>
+  <button class="singleButton"
+    [ngx-scroll-to]="'#section2'"
+    [ngx-scroll-to-duration]="400">Projects &amp; Designs
+  </button>
+  <button class="singleButton"
+    [ngx-scroll-to]="'#section3'"
+    [ngx-scroll-to-duration]="400">Contact
+  </button>
 </div>
 
 <div id="section1" class="container-fluid">
   <div class="row">
     <div class="col-md-8">
       <p>Hi,</p>
-      <p>I’m Ryan Fan, Computer Science major Junior studying at Purdue
+      <p>I’m Ryan, Computer Science major Junior studying at Purdue
         University. Interested in User Experience Design, Human Computer
         Interaction, Software Engineering and iOS Development.</p>
     </div>
@@ -33,4 +45,11 @@
 
 <div id="section3" class="container-fluid">
   <h1>Contact</h1>
+  <p>Zuyuan/Ryan Fan</p>
+  <p>Email: fan164@purdue.edu</p>
+  <h2>or Find Me on: </h2>
+  <a href="https://www.linkedin.com/in/zuyuanfan/"
+    class="shareButton linkedin"></a>
+  <a href="https://github.com/taeroro/"
+    class="shareButton github"></a>
 </div>

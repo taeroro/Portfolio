@@ -2,13 +2,14 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 10;
 }
 
 .logoImg {
   padding-left: 50px;
   padding-top: 50px;
   height: 100px;
+  cursor: pointer;
   filter: brightness(0) invert(1);
 }
 
@@ -45,7 +46,7 @@
 
 .menuClosed {
   position: fixed;
-  z-index: 0;
+  z-index: 5;
   right: 0;
   width: 0px;
   height: 100%;
@@ -55,7 +56,7 @@
 
 .menuPanel {
   position: fixed;
-  z-index: 0;
+  z-index: 5;
   right: 0;
   width: 400px;
   height: 100%;
@@ -65,7 +66,7 @@
 
 .menuClosed h1, .menuPanel h1 {
   padding-left: 110px;
-  margin-top: 140px;
+  margin-top: 160px;
   margin-bottom: 50px;
   font-size: 32px;
   letter-spacing: 8px;
@@ -74,27 +75,32 @@
 
 /*background: linear-gradient(to right, #996CFD, #FF6287);*/
 
-a.button {
+.singleButton {
+  border: none;
   padding-top: 30px;
   padding-bottom: 30px;
-  text-align: center;
+  padding-left: 50px;
+  text-align: left;
   display: block;
   width: 400px;
   color: inherit;
   text-decoration: none !important;
   font-size: 26px;
   letter-spacing: 7px;
+  text-transform: uppercase;
   font-family: "Avenir Next", sans-serif !important;
+  background-color: rgba(0,0,0,0);
   -webkit-transition-duration: all 0.3s;
   transition: all 0.3s;
 }
 
-a.button:hover {
+.singleButton:hover {
   color: white;
   background-color: rgb(93, 146, 249);
   box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
 }
 
+.singleButton:focus {outline:0;}
 
 #section1 {
   padding-left: 50px;
@@ -117,9 +123,43 @@ a.button:hover {
   font-family: "Avenir Next", sans-serif !important;
   /*background-color: rgba(100, 100, 100, 0.3);*/
 }
+@media only screen and (min-width: 850px) and (max-width: 1365px) {
+  #section1 p {
+    font-size: 25px;
+    letter-spacing: 5px;
+    line-height: 1.7;
+  }
+}
+@media only screen and (min-width: 630px) and (max-width: 850px) {
+  #section1 .row { margin: 25vh 120px auto 100px; }
+  #section1 p {
+    font-size: 22px;
+    letter-spacing: 4px;
+    line-height: 1.6;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 630px) {
+  #section1 .row { margin: 23vh 100px auto 80px; }
+  #section1 p {
+    padding-left: 10px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 540px) {
+  #section1 .row { margin: 20vh 20px auto 0px; }
+  #section1 p {
+    padding-left: 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+  }
+}
 
 #section2 h1, #section3 h1 {
   margin-top: 120px;
+  margin-bottom: 100px;
   margin-left: 120px;
   font-size: 50px;
   letter-spacing: 10px;
@@ -140,4 +180,71 @@ a.button:hover {
   height: 100vh;
   color: rgb(51, 51, 51);
   background-color: rgb(242, 242, 242);
+}
+#section3 p {
+  margin-left: 130px;
+  margin-bottom: 50px;
+  font-size: 25px;
+  letter-spacing: 6px;
+  line-height: 1.6;
+  font-family: "Avenir Next", sans-serif !important;
+}
+#section3 h2 {
+  margin-left: 130px;
+  margin-top: 120px;
+  font-size: 30px;
+  letter-spacing: 6px;
+  line-height: 1.6;
+  font-family: "Avenir Next", sans-serif !important;
+}
+
+.shareButton {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shareButton::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shareButton:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+.shareButton:hover::after {
+  opacity: 1;
+}
+
+.shareButton.linkedin {
+  margin-left: 130px;
+  background-size: 72px 72px;
+  background-position: center;
+  background-image: url('https://image.flaticon.com/icons/svg/61/61109.svg');
+  background-repeat: no-repeat;
+}
+
+.shareButton.github {
+  margin-left: 60px;
+  background-size: 72px 72px;
+  background-position: center;
+  background-image: url('https://image.flaticon.com/icons/png/512/25/25231.png');
+  background-repeat: no-repeat;
 }
