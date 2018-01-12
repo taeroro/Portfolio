@@ -46,6 +46,7 @@ export class AppComponent {
   }
 
   showDivs(n: number) {
+    // switch img
     var x = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
     if (n > x.length) this.slideIndex = 1;
     if (n < 1) this.slideIndex = x.length;
@@ -53,5 +54,17 @@ export class AppComponent {
       x[i].style.display = "none";
     }
     x[this.slideIndex - 1].style.display = "block";
+    // switch name
+    var currentIndex: number = this.slideIndex - 1;
+    var ptag = document.getElementById("projectName");
+    console.log(currentIndex);
+    switch(currentIndex) {
+      case 0:
+        ptag.innerHTML = "meetzam";
+        break;
+      case 1:
+        ptag.innerHTML = "Tr!plan";
+        break;
+    }
   }
 }

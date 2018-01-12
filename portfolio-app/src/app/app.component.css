@@ -173,18 +173,6 @@
   vertical-align: middle;
   overflow: hidden;
 }
-/*.overlay {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0) 55%,
-    rgba(0, 0, 0, 0.3) 65%,
-    rgba(0, 0, 0, 0.8) 100%);
-}*/
 .showroomContainer p {
   position: absolute;
   top: 0;
@@ -204,7 +192,19 @@
   height: 100vh;
   object-fit: cover !important;
   display: none;
+  -webkit-animation: fadeIn 0.7s;
+  animation: fadeIn 0.7s;
 }
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .showroomIndicator {
   display: inline-block;
   width: 100%;
@@ -309,4 +309,13 @@
   background-position: center;
   background-image: url('https://image.flaticon.com/icons/png/512/25/25231.png');
   background-repeat: no-repeat;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

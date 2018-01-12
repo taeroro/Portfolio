@@ -16,7 +16,7 @@
   <h1>SECTION</h1>
   <button class="singleButton"
     [ngx-scroll-to]="'#section1'"
-    [ngx-scroll-to-duration]="400">Home
+    [ngx-scroll-to-duration]="400">Intro
   </button>
   <button class="singleButton"
     [ngx-scroll-to]="'#section2'"
@@ -45,16 +45,16 @@
       [src]="imgPath1">
     <img class="showroomSlides"
       [src]="imgPath2">
-    <p>meetzam</p>
+    <p id="projectName">meetzam</p>
 
     <div class="showroomIndicator">
-      <div class="leftButton"
+      <div class="leftButton unselectable"
         (click)="changeSlides(-1)">
         &#10094;
         <!-- <span class="bar1"></span>
         <span class="bar2"></span> -->
       </div>
-      <div class="rightButton"
+      <div class="rightButton unselectable"
         (click)="changeSlides(1)">&#10095;</div>
     </div>
   </div>
