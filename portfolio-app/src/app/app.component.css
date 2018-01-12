@@ -27,7 +27,7 @@
   width: 42px;
   height: 5px;
   border-radius: 3px;
-  background-color: rgb(80, 80, 80);
+  background-color: rgb(50, 50, 50);
   margin: 5px 0;
   -webkit-transition-duration: 0.4s;
   transition: 0.4s;
@@ -70,10 +70,9 @@
   margin-bottom: 50px;
   font-size: 32px;
   letter-spacing: 8px;
-  font-family: "Avenir Next", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
 }
-
-/*background: linear-gradient(to right, #996CFD, #FF6287);*/
 
 .singleButton {
   border: none;
@@ -88,7 +87,8 @@
   font-size: 26px;
   letter-spacing: 7px;
   text-transform: uppercase;
-  font-family: "Avenir Next", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
   background-color: rgba(0,0,0,0);
   -webkit-transition-duration: all 0.3s;
   transition: all 0.3s;
@@ -101,6 +101,7 @@
 }
 
 .singleButton:focus {outline:0;}
+
 
 #section1 {
   padding-left: 50px;
@@ -120,7 +121,8 @@
   font-size: 26px;
   letter-spacing: 6px;
   line-height: 1.8;
-  font-family: "Avenir Next", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
   /*background-color: rgba(100, 100, 100, 0.3);*/
 }
 @media only screen and (min-width: 850px) and (max-width: 1365px) {
@@ -157,21 +159,72 @@
   }
 }
 
-#section2 h1, #section3 h1 {
-  margin-top: 120px;
-  margin-bottom: 100px;
-  margin-left: 120px;
-  font-size: 50px;
-  letter-spacing: 10px;
-  font-family: "Avenir Next", sans-serif !important;
-}
-
 #section2 {
-  padding-left: 50px;
-  padding-top: 50px;
+  /*padding-left: 50px;*/
+  /*padding-top: 50px;*/
   height: 100vh;
   color: rgb(51, 51, 51);
   background-color: #fff;
+}
+.showroomContainer {
+  position: absolute;
+  max-height: 100%;
+  left: 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+/*.overlay {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.3) 65%,
+    rgba(0, 0, 0, 0.8) 100%);
+}*/
+.showroomContainer p {
+  position: absolute;
+  bottom: 0;
+  margin-left: 130px;
+  margin-bottom: 100px;
+  padding: 12px 30px;
+  font-size: 26px;
+  letter-spacing: 6px;
+  background-color: rgb(30,30,30);
+  color: white;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
+  cursor: pointer;
+}
+.showroomSlides {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover !important;
+  display: none;
+}
+.showroomIndicator {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+}
+.leftButton {
+  margin-left: 50px;
+  float: left;
+}
+.rightButton {
+  margin-right: 50px;
+  float: right;
+}
+.leftButton, .rightButton {
+  display: inline;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
 }
 
 #section3 {
@@ -181,13 +234,22 @@
   color: rgb(51, 51, 51);
   background-color: rgb(242, 242, 242);
 }
+#section3 h1 {
+  margin-top: 80px;
+  margin-left: 120px;
+  font-size: 45px;
+  letter-spacing: 10px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+}
 #section3 p {
   margin-left: 130px;
   margin-bottom: 50px;
   font-size: 25px;
   letter-spacing: 6px;
   line-height: 1.6;
-  font-family: "Avenir Next", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
 }
 #section3 h2 {
   margin-left: 130px;
@@ -195,7 +257,8 @@
   font-size: 30px;
   letter-spacing: 6px;
   line-height: 1.6;
-  font-family: "Avenir Next", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
 }
 
 .shareButton {
@@ -211,7 +274,6 @@
 }
 
 .shareButton::after {
-  content: "";
   position: absolute;
   z-index: -1;
   top: 0;
@@ -235,7 +297,7 @@
 
 .shareButton.linkedin {
   margin-left: 130px;
-  background-size: 72px 72px;
+  background-size: 65px 65px;
   background-position: center;
   background-image: url('https://image.flaticon.com/icons/svg/61/61109.svg');
   background-repeat: no-repeat;

@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   logoPath = '../assets/portfolio_1.png';
+  imgPath1 = '../assets/portfolio-Triplan.jpg';
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
+    this.showDivs(this.slideIndex); // init the slideroom
   }
 
   ngOnDestroy() {
@@ -19,12 +21,12 @@ export class AppComponent {
   // handle scroll event
   scroll = (): void => {
     var logo = document.querySelector(".logoImg");
-    // when scrolled pass first container
-    if (window.scrollY >= window.innerHeight - 100) {
+    // when scrolled pass second container
+    if (window.scrollY >= 2*window.innerHeight - 100) {
       if (logo.className == "logoImg") logo.className += " changeFilter";
     }
-    // when scrolled back to first container
-    else if (window.scrollY < window.innerHeight - 100) {
+    // when scrolled back to second container
+    else if (window.scrollY < 2*window.innerHeight - 100) {
       if (logo.className == "logoImg changeFilter") logo.className = "logoImg";
     }
   };
@@ -33,5 +35,22 @@ export class AppComponent {
   menuFunction() {
     document.querySelector(".menuClosed").classList.toggle("menuPanel");
     document.querySelector(".menuButton").classList.toggle("change");
+  }
+
+  // for the slideroom
+  slideIndex: number = 1;
+
+  changeSlides(n: number) {
+    this.showDivs(this.slideIndex += n);
+  }
+
+  showDivs(n: number) {
+    var x = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
+    if (n > x.length) this.slideIndex = 1;
+    if (n < 1) this.slideIndex = x.length;
+    for (var i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[this.slideIndex - 1].style.display = "block";
   }
 }

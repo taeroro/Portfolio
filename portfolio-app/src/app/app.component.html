@@ -40,11 +40,29 @@
 </div>
 
 <div id="section2" class="container-fluid">
-  <h1>Projects & Designs</h1>
+  <div class="showroomContainer">
+    <img class="showroomSlides"
+      [src]="imgPath1">
+
+    <!-- <div class="overlay"> -->
+    <p>Tr!plan</p>
+    <!-- </div> -->
+
+    <div class="showroomIndicator">
+      <div class="leftButton"
+        (click)="changeSlides(-1)">
+        &#10094;
+        <!-- <span class="bar1"></span>
+        <span class="bar2"></span> -->
+      </div>
+      <div class="rightButton"
+        (click)="changeSlides(1)">&#10095;</div>
+    </div>
+  </div>
 </div>
 
 <div id="section3" class="container-fluid">
-  <h1>Contact</h1>
+  <h1 style="margin-bottom: 120px;">Contact</h1>
   <p>Zuyuan/Ryan Fan</p>
   <p>Email: fan164@purdue.edu</p>
   <h2>or Find Me on: </h2>
