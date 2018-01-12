@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   logoPath = '../assets/portfolio_1.png';
-  imgPath1 = '../assets/portfolio-Triplan.jpg';
+  imgPath1 = '../assets/portfolio-meetzam.jpg';
+  imgPath2 = '../assets/portfolio-Triplan.jpg';
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
@@ -21,12 +22,12 @@ export class AppComponent {
   // handle scroll event
   scroll = (): void => {
     var logo = document.querySelector(".logoImg");
-    // when scrolled pass second container
-    if (window.scrollY >= 2*window.innerHeight - 100) {
+    // when scrolled pass 1 container
+    if (window.scrollY >= window.innerHeight - 100) {
       if (logo.className == "logoImg") logo.className += " changeFilter";
     }
-    // when scrolled back to second container
-    else if (window.scrollY < 2*window.innerHeight - 100) {
+    // when scrolled back to 1 container
+    else if (window.scrollY < window.innerHeight - 100) {
       if (logo.className == "logoImg changeFilter") logo.className = "logoImg";
     }
   };
