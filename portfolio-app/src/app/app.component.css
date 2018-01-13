@@ -27,7 +27,7 @@
   width: 42px;
   height: 5px;
   border-radius: 3px;
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(55, 55, 55);
   margin: 5px 0;
   -webkit-transition-duration: 0.4s;
   transition: 0.4s;
@@ -195,7 +195,6 @@
   -webkit-animation: fadeIn 0.7s;
   animation: fadeIn 0.7s;
 }
-
 @-webkit-keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -204,7 +203,6 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 .showroomIndicator {
   display: inline-block;
   width: 100%;
@@ -223,8 +221,15 @@
 .leftButton, .rightButton {
   display: inline;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 26px;
   color: rgb(73,73,73);
+  -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.leftButton:hover, .rightButton:hover {
+  -webkit-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
 }
 
 #section3 {
