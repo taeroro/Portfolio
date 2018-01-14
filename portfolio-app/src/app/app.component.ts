@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  logoPath = '../assets/portfolio_1.png';
-  imgPath1 = '../assets/portfolio-meetzam.jpg';
-  imgPath2 = '../assets/portfolio-Triplan.jpg';
+  logoPath = '../assets/img/portfolio_1.png';
+  imgPath1 = '../assets/img/portfolio-meetzam.jpg';
+  imgPath2 = '../assets/img/portfolio-Triplan.jpg';
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
@@ -57,7 +57,6 @@ export class AppComponent {
     // switch name
     var currentIndex: number = this.slideIndex - 1;
     var ptag = document.getElementById("projectName");
-    console.log(currentIndex);
     switch(currentIndex) {
       case 0:
         ptag.innerHTML = "meetzam";
@@ -67,4 +66,24 @@ export class AppComponent {
         break;
     }
   }
+
+  detailOpened: boolean = false;
+
+  openProjectDetail() {
+    var indicator = document.getElementsByClassName("showroomIndicator") as HTMLCollectionOf<HTMLElement>;
+    var s2 = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
+    // detect if the detail is opened or closed
+    if (this.detailOpened == false) {
+      indicator[0].style.visibility = "hidden";
+      s2[this.slideIndex - 1].style.height = "65vh";
+      this.detailOpened = true;
+    }
+    else {
+      indicator[0].style.visibility = "visible";
+      s2[this.slideIndex - 1].style.height = "100vh";
+      this.detailOpened = false;
+    }
+    s2[this.slideIndex - 1].classList.toggle("makeitblur");
+  }
+
 }

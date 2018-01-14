@@ -108,7 +108,7 @@
   padding-top: 50px;
   height: 100vh;
   color: #fff;
-  background-image: url(../assets/chris-holgersson-249309.jpg);
+  background-image: url(../assets/img/chris-holgersson-249309.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20% 20%;
@@ -173,25 +173,27 @@
   vertical-align: middle;
   overflow: hidden;
 }
-.showroomContainer p {
+#projectName {
   position: absolute;
   top: 0;
   margin-left: 130px;
   margin-top: 200px;
   padding: 12px 30px;
   font-size: 26px;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
   background-color: rgb(30,30,30);
   color: white;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 300;
   cursor: pointer;
+  text-decoration: none;
 }
 .showroomSlides {
   width: 100vw;
   height: 100vh;
   object-fit: cover !important;
   display: none;
+  transition: all 0.4s;
   -webkit-animation: fadeIn 0.7s;
   animation: fadeIn 0.7s;
 }
@@ -226,11 +228,21 @@
   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .leftButton:hover, .rightButton:hover {
   -webkit-transform: scale(1.5, 1.5);
   transform: scale(1.5, 1.5);
 }
+.projectDetails {
+  bottom: 0;
+  width: 100vw;
+  height: 35vh;
+  background-color: white;
+}
+.projectDetails p {
+  position: absolute;
+  color: grey;
+}
+
 
 #section3 {
   padding-left: 50px;
@@ -323,4 +335,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.makeitblur {
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
 }

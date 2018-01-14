@@ -45,16 +45,20 @@
       [src]="imgPath1">
     <img class="showroomSlides"
       [src]="imgPath2">
-    <p id="projectName">meetzam</p>
+    <a id="projectName" class="unselectable"
+    (click)="openProjectDetail()"></a>
 
     <div class="showroomIndicator">
-      <!-- <span class="bar1"></span>
-      <span class="bar2"></span> -->
       <div class="leftButton unselectable"
         (click)="changeSlides(-1)">&#10094;</div>
       <div class="rightButton unselectable"
         (click)="changeSlides(1)">&#10095;</div>
     </div>
+
+    <div class="projectDetails">
+
+    </div>
+
   </div>
 </div>
 
