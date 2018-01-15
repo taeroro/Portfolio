@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   logoPath = '../assets/img/portfolio_1.png';
   imgPath1 = '../assets/img/portfolio-meetzam.jpg';
   imgPath2 = '../assets/img/portfolio-Triplan.jpg';
+  backgroundImgPath = "../assets/img/chris-holgersson-249309.jpg";
+  defaultImage = '../assets/img/91.svg';
+
+  public scrollAndSearch$: Observable<any>;
+  private updateImage$;
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
@@ -17,6 +25,14 @@ export class AppComponent {
 
   ngOnDestroy() {
     window.removeEventListener('scroll', this.scroll, true);
+  }
+
+  constructor() {
+    this.updateImage$ = new Subject();
+    this.scrollAndSearch$ = Observable.merge(
+      Observable.fromEvent(window, 'scroll'),
+      this.updateImage$
+    );
   }
 
   // handle scroll event
@@ -54,6 +70,7 @@ export class AppComponent {
       x[i].style.display = "none";
     }
     x[this.slideIndex - 1].style.display = "block";
+    this.updateImage$.next();
     // switch name
     var currentIndex: number = this.slideIndex - 1;
     var ptag = document.getElementById("projectName");
@@ -86,4 +103,15 @@ export class AppComponent {
     s2[this.slideIndex - 1].classList.toggle("makeitblur");
   }
 
+  loadingComplete() {
+    var s2 = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
+    s2[this.slideIndex - 1].classList.toggle("slidesLoaded");
+    console.log("loaded" + (this.slideIndex - 1));
+  }
+
+  backgroundLoadingComplete() {
+    var s1 = document.getElementById("section1");
+    s1.style.backgroundSize = "cover";
+    s1.style.backgroundPosition = "20% 20%";
+  }
 }

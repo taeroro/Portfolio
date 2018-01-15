@@ -108,10 +108,10 @@
   padding-top: 50px;
   height: 100vh;
   color: #fff;
-  background-image: url(../assets/img/chris-holgersson-249309.jpg);
+  background-image: url(../assets/img/91.svg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% 20%;
+  background-size: none;
+  background-position: 50% 50%;
 }
 #section1 .row {
   margin: 30vh 120px auto 100px;
@@ -191,11 +191,14 @@
 .showroomSlides {
   width: 100vw;
   height: 100vh;
-  object-fit: cover !important;
+  object-fit: none !important;
   display: none;
   transition: all 0.4s;
   -webkit-animation: fadeIn 0.7s;
   animation: fadeIn 0.7s;
+}
+.slidesLoaded {
+  object-fit: cover !important;
 }
 @-webkit-keyframes fadeIn {
   from { opacity: 0; }
@@ -225,8 +228,8 @@
   cursor: pointer;
   font-size: 26px;
   color: rgb(73,73,73);
-  -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 .leftButton:hover, .rightButton:hover {
   -webkit-transform: scale(1.5, 1.5);
