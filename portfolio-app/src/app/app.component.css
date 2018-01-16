@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  padding-left: 50px;
-  padding-top: 50px;
-  height: 100px;
+  margin-left: 50px;
+  margin-top: 42px;
+  height: 60px;
   cursor: pointer;
   filter: brightness(0) invert(1);
 }
@@ -16,8 +16,8 @@
   top: 0;
   z-index: 10;
   right: 0;
-  padding-right: 50px;
-  padding-top: 55px;
+  margin-right: 50px;
+  margin-top: 55px;
   display: inline-block;
   cursor: pointer;
 }

@@ -9,12 +9,10 @@ import { Subject } from 'rxjs/Subject';
 })
 
 export class AppComponent {
-  logoPath = '../assets/img/portfolio_1.png';
+  logoPath = '../assets/img/portfolio_1.svg';
   imgPath1 = '../assets/img/portfolio-meetzam.jpg';
   imgPath2 = '../assets/img/portfolio-Triplan.jpg';
-  backgroundImgPath = "../assets/img/chris-holgersson-249309.jpg";
-  defaultImage = '../assets/img/91.svg';
-
+  backgroundImgPath = "https://images.unsplash.com/photo-1493585552824-131927c85da2?auto=format&fit=crop&w=1950&q=80";
   public scrollAndSearch$: Observable<any>;
   private updateImage$;
 
