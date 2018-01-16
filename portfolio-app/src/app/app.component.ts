@@ -77,9 +77,13 @@ export class AppComponent {
     switch(currentIndex) {
       case 0:
         ptag.innerHTML = "meetzam";
+        document.getElementById("meetzamDetails").style.visibility = "visible";
+        document.getElementById("triplanDetails").style.visibility = "hidden";
         break;
       case 1:
         ptag.innerHTML = "Tr!plan";
+        document.getElementById("triplanDetails").style.visibility = "visible";
+        document.getElementById("meetzamDetails").style.visibility = "hidden";
         break;
     }
   }
@@ -106,12 +110,15 @@ export class AppComponent {
   loadingComplete() {
     var s2 = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
     s2[this.slideIndex - 1].classList.toggle("slidesLoaded");
-    console.log("loaded" + (this.slideIndex - 1));
   }
 
   backgroundLoadingComplete() {
     var s1 = document.getElementById("section1");
     s1.style.backgroundSize = "cover";
     s1.style.backgroundPosition = "20% 20%";
+    var s1ptag = document.getElementsByClassName("section1Text") as HTMLCollectionOf<HTMLElement>;
+    for (var i = 0; i < s1ptag.length; i++) {
+      s1ptag[i].style.visibility = "visible";
+    }
   }
 }

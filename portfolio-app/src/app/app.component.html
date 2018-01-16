@@ -31,12 +31,11 @@
 <div id="section1"
   class="container-fluid"
   [lazyLoad]="backgroundImgPath"
-  [offset]="0"
   (onLoad)="backgroundLoadingComplete()">
   <div class="row">
     <div class="col-md-8">
-      <p>Hi,</p>
-      <p>I’m Ryan, Computer Science major Junior studying at Purdue
+      <p class="section1Text">Hi,</p>
+      <p class="section1Text">I’m Ryan, Computer Science major Junior studying at Purdue
         University. Interested in User Experience Design, Human Computer
         Interaction, Software Engineering and iOS Development.</p>
     </div>
@@ -46,13 +45,11 @@
 <div id="section2" class="container-fluid">
   <div class="showroomContainer">
     <img class="showroomSlides"
-      [defaultImage]="defaultImage"
       [lazyLoad]="imgPath1"
       [scrollObservable]="scrollAndSearch$"
       (onLoad)="loadingComplete()">
-
+<!-- [defaultImage]="defaultImage" -->
     <img class="showroomSlides"
-      [defaultImage]="defaultImage"
       [lazyLoad]="imgPath2"
       [scrollObservable]="scrollAndSearch$"
       (onLoad)="loadingComplete()">
@@ -68,19 +65,35 @@
     </div>
 
     <div class="projectDetails">
+      <p id="meetzamDetails">
+        meetzam is an iOS application which allows individuals to search for
+        other people to go to a movie with. Users can select one or more movies
+        that they want to watch and the app will match them with people sharing
+        the same interests. <br><br>
+        <a class="ulineLink" href="https://github.com/meetZam-Dev/meetzam">
+          Project Link &#8594;</a>
 
+      </p>
+      <p id="triplanDetails">
+        Tr!plan is a transportation planning user interface that allows users to
+         plan, book and track their journey based on user preferences and needs.
+         It is targeted towards young commuters and travelers. Our team applied
+         the user-centered design(UCD) process for the entire project. <br><br>
+         <a class="ulineLink" href="https://invis.io/S3DWKC1Q5">
+           Project Demo &#8594;</a>
+      </p>
     </div>
 
   </div>
 </div>
 
 <div id="section3" class="container-fluid">
-  <h1 style="margin-bottom: 120px;">Contact</h1>
-  <p>Zuyuan/Ryan Fan</p>
-  <p>Email: fan164@purdue.edu</p>
-  <h2>or Find Me on: </h2>
+  <h1>Contact</h1>
+  <p class="marginT">Zuyuan/Ryan Fan</p>
+  <p class="marginT">Email: fan164@purdue.edu</p>
+  <h2 class="marginT">or Find Me on: </h2>
   <a href="https://www.linkedin.com/in/zuyuanfan/"
-    class="shareButton linkedin"></a>
+    class="shareButton linkedin marginT"></a>
   <a href="https://github.com/taeroro/"
     class="shareButton github"></a>
 </div>
