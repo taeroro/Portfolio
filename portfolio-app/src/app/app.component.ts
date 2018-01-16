@@ -89,20 +89,27 @@ export class AppComponent {
   }
 
   detailOpened: boolean = false;
+  nameHolder: string;
 
   openProjectDetail() {
     var indicator = document.getElementsByClassName("showroomIndicator") as HTMLCollectionOf<HTMLElement>;
     var s2 = document.getElementsByClassName("showroomSlides") as HTMLCollectionOf<HTMLElement>;
+    var ptag = document.getElementById("projectName");
     // detect if the detail is opened or closed
     if (this.detailOpened == false) {
       indicator[0].style.visibility = "hidden";
       s2[this.slideIndex - 1].style.height = "65vh";
       this.detailOpened = true;
+      this.nameHolder = ptag.innerHTML;
+      ptag.innerHTML = "&#10005;";
+      ptag.style.padding = "12px 15px 12px 20px";
     }
     else {
       indicator[0].style.visibility = "visible";
       s2[this.slideIndex - 1].style.height = "100vh";
       this.detailOpened = false;
+      ptag.innerHTML = this.nameHolder;
+      ptag.style.padding = "12px 30px";
     }
     s2[this.slideIndex - 1].classList.toggle("makeitblur");
   }

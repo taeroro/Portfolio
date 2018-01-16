@@ -1,15 +1,12 @@
-<div class="topBar">
-  <img class = "logoImg"
-    [src]="logoPath"
-    [ngx-scroll-to]="'#section1'"
-    [ngx-scroll-to-duration]="400">
+<img class = "logoImg"
+  [src]="logoPath"
+  [ngx-scroll-to]="'#section1'"
+  [ngx-scroll-to-duration]="400">
 
-  <!-- <div class="menuButton" onclick="menuFunction(this)"> -->
-  <div class="menuButton" (click)="menuFunction()">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-  </div>
+<div class="menuButton" (click)="menuFunction()">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
 </div>
 
 <div class="menuClosed">
